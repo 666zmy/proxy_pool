@@ -22,3 +22,11 @@ COPY . .
 EXPOSE 5010
 
 ENTRYPOINT [ "sh", "start.sh" ]
+# Dockerfile
+FROM gitpod/workspace-full:latest
+
+# 安装 Python 3.10
+RUN pyenv install 3.10.0 \
+    && pyenv global 3.10.0 \
+    && pyenv rehash
+
